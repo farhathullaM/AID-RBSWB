@@ -8,6 +8,6 @@
 
 
 After Uploading the code
-	Unplug "GPIO to GND" pin, else the data will be erased
-	Check in serial monitor 
-	band w
+	a. Unplug "GPIO to GND" pin, else the data will be erased
+	b. Check in serial monitor 
+	c. band width should be set to 115200
