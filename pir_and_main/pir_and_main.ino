@@ -14,8 +14,8 @@
 #include <WiFi.h>
 
 // REPLACE WITH YOUR NETWORK CREDENTIALS
-const char* ssid = "Samsung M10";
-const char* password = "00000001";
+const char* ssid = "SSID";
+const char* password = "password";
 
 // To send Email using Gmail use port 465 (SSL) and SMTP Server smtp.gmail.com
 // You need to create an email app password
