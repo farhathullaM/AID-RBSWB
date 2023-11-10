@@ -14,17 +14,17 @@
 #include <WiFi.h>
 
 // REPLACE WITH YOUR NETWORK CREDENTIALS
-const char* ssid = "Samsung M10";
-const char* password = "00000001";
+const char* ssid = "SSID";
+const char* password = "password";
 
 // To send Email using Gmail use port 465 (SSL) and SMTP Server smtp.gmail.com
 // You need to create an email app password
-#define emailSenderAccount    "popularedk@gmail.com"
-#define emailSenderPassword   "jokitgkdrgttmkok"
+#define emailSenderAccount    "sender email"
+#define emailSenderPassword   "sender app password"
 #define smtpServer            "smtp.gmail.com"
 #define smtpServerPort        465
 #define emailSubject          "ESP32-CAM Photo Captured"
-#define emailRecipient        "farhu123123456@gmail.com"
+#define emailRecipient        "reciever@gmail.com"
 
 #define CAMERA_MODEL_AI_THINKER
 

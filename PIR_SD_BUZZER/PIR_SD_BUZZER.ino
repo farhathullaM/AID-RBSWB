@@ -7,12 +7,34 @@
 #include "driver/rtc_io.h"
 #include <EEPROM.h>            // read and write from flash memory
 #include "ESP32_MailClient.h"
+#include <WiFi.h>
+#include <ESP_Mail_Client.h>
+#include "SPI.h"
+
 // define the number of bytes you want to access
 #define EEPROM_SIZE 1
+// REPLACE WITH YOUR NETWORK CREDENTIALS
+const char* ssid = "REPLACE_WITH_YOUR_SSID";
+const char* password = "REPLACE_WITH_YOUR_PASSWORD";
+
+// To send Email using Gmail use port 465 (SSL) and SMTP Server smtp.gmail.com
+// You need to create an email app password
+#define emailSenderAccount    "SENDER_EMAIL@gmail.com"
+#define emailSenderPassword   "YOUR_EMAIL_APP_PASSWORD"
+#define smtpServer            "smtp.gmail.com"
+#define smtpServerPort        465
+#define emailSubject          "ESP32-CAM Photo Captured"
+#define emailRecipient        "YOUR_EMAIL_RECIPIENT@example.com"
 
 int pictureNumber = 0;
 
 const int pirSensorPin = 13; // Digital pin to which the PIR sensor is connected
+
+/* The SMTP Session object used for Email sending */
+SMTPSession smtp;
+
+/* Callback function to get the Email sending status */
+void smtpCallback(SMTP_Status status);
 
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
@@ -59,7 +81,7 @@ void loop() {
         esp_camera_fb_return(fb); // Return the frame buffer
       }
 
-      delay(10000);  // Delay to avoid rapid consecutive captures
+      delay(5000);  // Delay to avoid rapid consecutive captures
     }
 }
 
