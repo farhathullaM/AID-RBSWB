@@ -19,8 +19,13 @@ const char* password = "password";
 
 // To send Email using Gmail use port 465 (SSL) and SMTP Server smtp.gmail.com
 // You need to create an email app password
+<<<<<<< HEAD:pir_and_mail/pir_and_mail.ino
 #define emailSenderAccount    "sender email"
 #define emailSenderPassword   "sender app password"
+=======
+#define emailSenderAccount    "Sender email"
+#define emailSenderPassword   "Email app password"
+>>>>>>> bfc3f95a9916d93f8d84ce2dc51574b83069bcc5:pir_and_main/pir_and_main.ino
 #define smtpServer            "smtp.gmail.com"
 #define smtpServerPort        465
 #define emailSubject          "ESP32-CAM Photo Captured"
